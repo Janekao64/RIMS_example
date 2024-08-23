@@ -1,0 +1,20 @@
+{
+            "total_events": 1912,
+            "total_traces": 10,
+            "Declaration APPROVED by ADMINISTRATION_frequency": 693,
+            "Declaration SUBMITTED by EMPLOYEE_frequency": 669,
+            "Declaration FINAL_APPROVED by SUPERVISOR_frequency": 260,
+            "Payment Handled_frequency": 119,
+            "Request Payment_frequency": 171,
+            "duration": "31530523.597879",
+            "start_simulation": "2024-08-19 10:50:31.998211",
+            "end_simulation": "2025-08-19 09:19:15.596090",
+            "EMPLOYEE": {
+                        "total": 1622,
+                        "STAFF MEMBER": 1622
+            },
+            "UNDEFINED": {
+                        "total": 290,
+                        "SYSTEM": 290
+            }
+}

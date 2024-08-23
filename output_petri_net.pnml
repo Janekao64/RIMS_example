@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="alpha_classic_net_1724053876.8415484" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>alpha_classic_net_1724053876.8415484</text>
+    </name>
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="({'Declaration FINAL_APPROVED by SUPERVISOR'}, {'Request Payment'})">
+        <name>
+          <text>({'Declaration FINAL_APPROVED by SUPERVISOR'}, {'Request Payment'})</text>
+        </name>
+      </place>
+      <place id="({'Declaration APPROVED by ADMINISTRATION'}, {'Declaration FINAL_APPROVED by SUPERVISOR'})">
+        <name>
+          <text>({'Declaration APPROVED by ADMINISTRATION'}, {'Declaration FINAL_APPROVED by SUPERVISOR'})</text>
+        </name>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <place id="({'Request Payment'}, {'Payment Handled'})">
+        <name>
+          <text>({'Request Payment'}, {'Payment Handled'})</text>
+        </name>
+      </place>
+      <transition id="Payment Handled">
+        <name>
+          <text>Payment Handled</text>
+        </name>
+      </transition>
+      <transition id="Declaration SUBMITTED by EMPLOYEE">
+        <name>
+          <text>Declaration SUBMITTED by EMPLOYEE</text>
+        </name>
+      </transition>
+      <transition id="Request Payment">
+        <name>
+          <text>Request Payment</text>
+        </name>
+      </transition>
+      <transition id="Declaration FINAL_APPROVED by SUPERVISOR">
+        <name>
+          <text>Declaration FINAL_APPROVED by SUPERVISOR</text>
+        </name>
+      </transition>
+      <transition id="Declaration APPROVED by ADMINISTRATION">
+        <name>
+          <text>Declaration APPROVED by ADMINISTRATION</text>
+        </name>
+      </transition>
+      <arc id="2865688835984" source="Payment Handled" target="end"/>
+      <arc id="2865688826896" source="({'Declaration APPROVED by ADMINISTRATION'}, {'Declaration FINAL_APPROVED by SUPERVISOR'})" target="Declaration FINAL_APPROVED by SUPERVISOR"/>
+      <arc id="2865724439184" source="({'Declaration FINAL_APPROVED by SUPERVISOR'}, {'Request Payment'})" target="Request Payment"/>
+      <arc id="2865688824912" source="Declaration APPROVED by ADMINISTRATION" target="({'Declaration APPROVED by ADMINISTRATION'}, {'Declaration FINAL_APPROVED by SUPERVISOR'})"/>
+      <arc id="2865724425616" source="Declaration FINAL_APPROVED by SUPERVISOR" target="({'Declaration FINAL_APPROVED by SUPERVISOR'}, {'Request Payment'})"/>
+      <arc id="2865725034256" source="Request Payment" target="({'Request Payment'}, {'Payment Handled'})"/>
+      <arc id="2865725107984" source="({'Request Payment'}, {'Payment Handled'})" target="Payment Handled"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="end">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

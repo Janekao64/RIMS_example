@@ -1,0 +1,100 @@
+{
+    "processing_time": {
+        "Declaration APPROVED by ADMINISTRATION": {
+            "name": "uniform",
+            "parameters": {
+                "low": 500,
+                "high": 10000
+            }
+        },
+        "Declaration SUBMITTED by EMPLOYEE": {
+            "name": "uniform",
+            "parameters": {
+                "low": 500,
+                "high": 10000
+            }
+        },
+        "Declaration FINAL_APPROVED by SUPERVISOR": {
+            "name": "uniform",
+            "parameters": {
+                "low": 500,
+                "high": 10000
+            }
+        },
+        "Payment Handled": {
+            "name": "uniform",
+            "parameters": {
+                "low": 500,
+                "high": 10000
+            }
+        },
+        "Request Payment": {
+            "name": "uniform",
+            "parameters": {
+                "low": 500,
+                "high": 10000
+            }
+        }
+    },
+    "interTriggerTimer": {
+        "type": "distribution",
+        "name": "exponential",
+        "parameters": {
+            "scale": 300
+        }
+    },
+    
+    "resource_table": [
+        {
+            "role": "EMPLOYEE",
+            "task": "Declaration SUBMITTED by EMPLOYEE"
+        },
+        {
+            "role": "EMPLOYEE",
+            "task": "Declaration APPROVED by ADMINISTRATION"
+        },
+        {
+            "role": "EMPLOYEE",
+            "task": "Declaration FINAL_APPROVED by SUPERVISOR"
+        },
+        {
+            "role": "UNDEFINED",
+            "task": "Request Payment"
+        },
+        {
+            "role": "UNDEFINED",
+            "task": "Payment Handled"
+        }
+    ],
+
+    "resource": {
+        "EMPLOYEE": {
+            "resources": ["STAFF MEMBER"],
+            "calendar": {
+                "days": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "hour_min": 8,
+                "hour_max": 16
+            }
+        },
+        "UNDEFINED": {
+            "resources": ["SYSTEM"],
+            "calendar": {
+                "days": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "hour_min": 8,
+                "hour_max": 16
+            }
+        }
+    }
+}
